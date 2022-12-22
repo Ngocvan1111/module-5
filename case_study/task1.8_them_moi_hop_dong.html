@@ -2,102 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sửa thông tin khách hàng</title>
+    <title>Thêm mới hợp đồng</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="row mg-0" style="height: 70vh ">
+
+<div class="row mg-0" style="height: 70vh;margin: 0">
     <div class="col-md-4"></div>
-    <div class="col-md-4" style=" border-radius: 15px;background-image: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE)">
-        <form action="#" method="post"
-              class="align-items-center; align-content-center">
+    <div class="col-md-4" style=" background-image: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE);border-radius: 15px">
+        <form action="#" method="post" class="align-items-center; align-content-center">
             <div class="row my-3">
-                <h2 style="text-align: center;color: black">EDIT CUSTOMER</h2>
+                <h2 style="text-align: center;color: black">CREATE NEW CONTRACT</h2>
             </div>
             <div class="row my-2">
                 <div class="col-md-6">
-                    <label>Name</label>
-                </div>
-                <div class="col-md-6">
-                    <label><input type="text"/></label>
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-md-6">
-                    <label>Birthday </label>
+                    <label>Start Date</label>
                 </div>
                 <div class="col-md-6">
                     <label><input type="date"/></label>
+
                 </div>
             </div>
             <div class="row my-2">
                 <div class="col-md-6">
-                    <label>Gender</label>
+                    <label>End Date</label>
                 </div>
                 <div class="col-md-6">
-                    <label><input type="radio"/></label>
-                    <label>Male</label>
-                    <label><input type="radio"></label>
-                    <label>Female</label>
+                    <label><input type="date"/></label>
+
                 </div>
             </div>
+
             <div class="row my-2">
                 <div class="col-md-6">
-                    <label>idCard</label>
+                    <label>Deposit</label>
                 </div>
                 <div class="col-md-6">
                     <label><input type="text"/></label>
+
                 </div>
             </div>
             <div class="row my-2">
                 <div class="col-md-6">
-                    <label>Phone Number</label>
-                </div>
-                <div class="col-md-6">
-                    <label><input type="text"/></label>
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-md-6">
-                    <label>Email</label>
-                </div>
-                <div class="col-md-6">
-                    <label><input type="text"/></label>
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-md-6">
-                    <label>Address</label>
-                </div>
-                <div class="col-md-6">
-                    <label><input type="text"/></label>
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-md-6">
-                    <label>Customer Type</label>
+                    <label>Customer</label>
                 </div>
                 <div class="col-md-6">
                     <select class="form-control-sm">
-                        <option>
-                           --- choice customer type ---
-                        </option>
+                        <option>Lại Văn Ngọc</option>
+                        <option>Nguyễn Văn Chung</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-6">
+                    <label>Employee</label>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control-sm">
+                        <option>Lại Văn Ngọc</option>
+                        <option>Nguyễn Văn Chung</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-6">
+                    <label>Facility</label>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control-sm">
+                        <option>Villa</option>
+                        <option>House</option>
+                        <option>Room</option>
                     </select>
                 </div>
             </div>
 
             <div class="row my-5">
-                <label style="text-align: center" ><input class="text-primary" type="submit" value="Edit customer"/>
+                <label style="text-align: center" ><input class="text-primary" type="submit" value="Create contract"/>
                 </label>
+
             </div>
             <div class="row my-5">
-                <label style="text-align: center" ><a href="#" style="margin-left: 30px;margin-top: 20px" class="text-dark">Back to Customer List</a>
+                <label style="text-align: center" ><a href="#" style="margin-left: 30px;margin-top: 20px" class="text-dark">Back to contract List</a>
                 </label>
             </div>
         </form>
+
     </div>
 </div>
 
+
+</div>
 </body>
 </html>
