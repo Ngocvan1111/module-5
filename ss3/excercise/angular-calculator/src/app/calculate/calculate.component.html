@@ -1,0 +1,12 @@
+<p>calculator works!</p>
+<label for="firstNumber">FistNumber:  </label>
+<input type="text" id="firstNumber"  [(ngModel)]="calculator.firstNumber" ><br>
+<label for="secondNumber">SecondNumber:</label>
+<input type="text" id="secondNumber" [(ngModel)]="calculator.secondNumber"  ><br>
+<input #plus type="button" value="+" (click)="getResult(plus.value)">
+<input #minus type="button" value="-" (click)="getResult(minus.value)">
+<input #multiple type="button" value="*" (click)="getResult(multiple.value)">
+<input #divide type="button" value="/" (click)="getResult(divide.value)">
+<br>
+<label for="result">Result:</label>
+<input type="text" id="result" [(ngModel)]="calculator.result">
