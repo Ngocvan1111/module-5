@@ -1,0 +1,211 @@
+<!-- Task 1.2 Tạo prototype Danh sách các dịch vụ tại Furama-->
+<div class="p-5 text-center bg-light mb-5" style="margin-top: 27vh">
+  <div class="container">
+    <div class="row" >
+
+      <!-- First column -->
+      <div class="col-md-3" style="margin-bottom: 10px;border-radius: 10px"  *ngFor="let facility of facilitys">
+
+        <!-- Card -->
+        <div class="card" >
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"/>
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{facility.name}}</h5>
+            <p class="card-text">{{facility.descriptionOtherConvenience}}</p>
+            <a href="#!" class="btn btn-primary">View more</a>
+          </div>
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- First column -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--      &lt;!&ndash; Second column &ndash;&gt;-->
+<!--      <div class="col-md">-->
+
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/112.webp" class="img-fluid"/>-->
+<!--            <a href="#!">-->
+<!--              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of-->
+<!--              the card's-->
+<!--              content.</p>-->
+<!--            <a href="#!" class="btn btn-primary">Button</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Second column &ndash;&gt;-->
+
+<!--      &lt;!&ndash; Third column &ndash;&gt;-->
+<!--      <div class="col-md">-->
+
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/113.webp" class="img-fluid"/>-->
+<!--            <a href="#!">-->
+<!--              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of-->
+<!--              the card's-->
+<!--              content.</p>-->
+<!--            <a href="#!" class="btn btn-primary">Button</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Third column &ndash;&gt;-->
+<!--      <div class="col-md">-->
+
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/113.webp" class="img-fluid"/>-->
+<!--            <a href="#!">-->
+<!--              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of-->
+<!--              the card's-->
+<!--              content.</p>-->
+<!--            <a href="#!" class="btn btn-primary">Button</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Third column &ndash;&gt;-->
+
+<!--    </div>-->
+<!--    <div class="row pt-2">-->
+
+<!--      &lt;!&ndash; First column &ndash;&gt;-->
+<!--      <div class="col-md">-->
+
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"/>-->
+<!--            <a href="#!">-->
+<!--              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of-->
+<!--              the card's-->
+<!--              content.</p>-->
+<!--            <a href="#!" class="btn btn-primary">Button</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; First column &ndash;&gt;-->
+
+<!--      &lt;!&ndash; Second column &ndash;&gt;-->
+<!--      <div class="col-md">-->
+
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/112.webp" class="img-fluid"/>-->
+<!--            <a href="#!">-->
+<!--              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of-->
+<!--              the card's-->
+<!--              content.</p>-->
+<!--            <a href="#!" class="btn btn-primary">Button</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Second column &ndash;&gt;-->
+
+<!--      &lt;!&ndash; Third column &ndash;&gt;-->
+<!--      <div class="col-md">-->
+
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/113.webp" class="img-fluid"/>-->
+<!--            <a href="#!">-->
+<!--              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of-->
+<!--              the card's-->
+<!--              content.</p>-->
+<!--            <a href="#!" class="btn btn-primary">Button</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Third column &ndash;&gt;-->
+<!--      <div class="col-md">-->
+
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/113.webp" class="img-fluid"/>-->
+<!--            <a href="#!">-->
+<!--              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of-->
+<!--              the card's-->
+<!--              content.</p>-->
+<!--            <a href="#!" class="btn btn-primary">Button</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Card &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Third column &ndash;&gt;-->
+
+    </div>
+  </div>
+</div>

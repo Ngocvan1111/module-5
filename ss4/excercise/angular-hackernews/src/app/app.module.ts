@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import { ListArticleComponent } from './list-article/list-article.component';
+import { ImgComponent } from './img/img.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListArticleComponent } from './list-article/list-article.component';
     LikeComponent,
     NavbarComponent,
     FooterComponent,
-    ListArticleComponent
+    ListArticleComponent,
+    ImgComponent
   ],
     imports: [
         BrowserModule,
