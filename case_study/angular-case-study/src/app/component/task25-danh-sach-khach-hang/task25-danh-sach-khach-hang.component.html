@@ -20,7 +20,8 @@
 <div class="row mg-0" style="height: 70vh; margin: 0">
 
   <div class="col-md-12">
-    <table class="table table-success table-striped" style="height: 5px">
+    <table class="table table-success table-striped">
+      <thead>
       <tr>
         <th>Stt</th>
         <th>
@@ -28,22 +29,23 @@
         </th>
         <th>Name</th>
         <th>Birthday</th>
-        <th>Gender</th>
+        <th>idCard</th>
         <th>Phone number</th>
         <th>Email</th>
         <th>Edit</th>
         <th>Delete</th>
 
       </tr>
+      </thead>
+      <tbody *ngFor="let customer of customers;index as i">
       <tr>
-        <td >1</td>
-        <td >Gold</td>
-        <td >Lại Văn Ngọc</td>
-        <td >06/12/1994</td>
-        <td >Male</td>
-
-        <td >0393090815</td>
-        <td >l.v.ngoc94@gmail.com</td>
+        <td > {{i+1}}</td>
+        <td >{{customer.customerType.name}}</td>
+        <td >{{customer.name}}</td>
+        <td >{{customer.dateOfBirth | date: "longDate"}}</td>
+        <td >{{customer.idCard}}</td>
+        <td >{{customer.phoneNumber}}</td>
+        <td >{{customer.email}}</td>
         <td> <button   type="button" class="btn btn-warning">
           Edit
         </button></td>
@@ -51,9 +53,7 @@
           Delete
         </button></td>
       </tr>
-
+      </tbody>
     </table>
-
-
   </div>
 </div>

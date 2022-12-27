@@ -14,6 +14,7 @@ import {ListFacilityComponent} from './component/list-facility/list-facility.com
 import {EditFacilityComponent} from './component/edit-facility/edit-facility.component';
 import {CreateFacilityComponent} from './component/create-facility/create-facility.component';
 import { Task29DanhSachHopDongComponent } from './component/task29-danh-sach-hop-dong/task29-danh-sach-hop-dong.component';
+import { HomeComponent } from './component/home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Task29DanhSachHopDongComponent } from './component/task29-danh-sach-hop
     ListFacilityComponent,
     EditFacilityComponent,
     CreateFacilityComponent,
-    Task29DanhSachHopDongComponent
+    Task29DanhSachHopDongComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

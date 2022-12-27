@@ -1,38 +1,55 @@
+<div  style="min-height: 50vh">
+  <div class="row" style="height: 50px;width: 100%; margin-bottom: 5px;margin-right: 12px">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <h1 style="text-align: center;color: #ee00ff"> CONTRACT LIST</h1>
+    </div>
+    <div class="col-md-2  " style="display: flex">
+      <a href="/contract/create" style="margin: auto"  class="btn btn-primary">Add new Contract</a>
+    </div>
+  </div>
+  <div class="row" style="margin: 10px">
+    <table class="table">
+      <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Facility</th>
+        <th>Customer</th>
+        <th>Start day</th>
+        <th>End day</th>
+        <th>Deposit</th>
+        <th>Total amount</th>
+        <th colspan="2">Attach facility</th>
+      </tr>
 
-<div class="row" style="margin: 10px 0">
-  <h1 style="color: aqua;text-align: center;"> CONTACT LIST </h1>
+      </thead>
+      <tbody *ngFor="let contract of contracts; index as i">
+      <tr>
+        <td >{{i+1}}</td>
+        <td >{{contract.facility.name}}</td>
+        <td >{{contract.customer.name}}</td>
+        <td >{{contract.dateStart | date: "longDate"}}</td>
+        <td >{{contract.dateEnd | date: "longDate"}}</td>
+        <td >{{contract.deposit | currency: "USD"}} VNĐ</td>
+        <td >{{contract.totalPay | currency: "USD"}} VNĐ</td>
+        <td style="width: 50px">
+          <button data-toggle="modal" data-target="#modalCreate"  type="button" class="btn btn-primary" >
+            +
+          </button>
+        </td>
+        <td style="width: 370px;text-align: center">
+          <button data-toggle="modal" data-target="#exampleModal" id="show" type="button"
+                  class="btn btn-primary" style="width: 340px">
+            Attach facility list
+          </button>
+        </td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
 </div>
-<div class="row" style="margin: 10px">
-  <table class="table">
-    <thead class="table-dark">
-    <th>#</th>
-    <th>Facility</th>
-    <th>Customer</th>
-    <th>Start day</th>
-    <th>End day</th>
-    <th>Deposit</th>
-    <th>Total amount</th>
-    <th colspan="2">Attach facility</th>
-    </thead>
-    <tbody>
-    <td >1</td>
-    <td >Room Twin 01</td>
-    <td >Nguyễn Thị Hào</td>
-    <td >2020-12-08</td>
-    <td >2020-12-08</td>
-    <td >12.000 vnđ</td>
-    <td >120.000vnđ</td>
-    <td style="width: 50px">
-      <button data-toggle="modal" data-target="#modalCreate"  type="button" class="btn btn-primary" >
-        +
-      </button>
-    </td>
-    <td style="width: 370px;text-align: center">
-      <button data-toggle="modal" data-target="#exampleModal" id="show" type="button"
-              class="btn btn-primary" style="width: 340px">
-        Attach facility list
-      </button>
-    </td>
-    </tbody>
-  </table>
-</div>
+

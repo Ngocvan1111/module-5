@@ -1,5 +1,5 @@
 <!-- Task 1.2 Tạo prototype Danh sách các dịch vụ tại Furama-->
-<div class="p-5 text-center bg-light mb-5" style="margin-top: 27vh">
+<div class="p-5 text-center bg-light mb-5">
   <div class="container">
     <div class="row" >
 
@@ -15,8 +15,11 @@
             </a>
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{facility.name}}</h5>
-            <p class="card-text">{{facility.descriptionOtherConvenience}}</p>
+            <h5 class="card-title" style="text-align: left;color: blue"> Facility name: {{facility.name}}</h5>
+            <p class="card-text" style="text-align: left"> Description: {{facility.descriptionOtherConvenience}}</p>
+            <p *ngIf="facility.facilityType.name == 'room';else other" style="text-align: left;color: red">Free facility: {{facility.facilityFree}}</p>
+            <ng-template #other><p style="text-align: left;color: red"> Standard Room: {{facility.standardRoom}}</p> </ng-template>
+
             <a href="#!" class="btn btn-primary">View more</a>
           </div>
         </div>
