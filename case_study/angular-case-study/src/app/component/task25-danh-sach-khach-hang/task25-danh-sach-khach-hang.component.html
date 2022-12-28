@@ -14,7 +14,7 @@
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-2  " style="display: flex">
-    <a href="/customer/create" style="margin: auto"  class="btn btn-primary">Add new Customer</a>
+    <a routerLink="/add-new-customer" style="margin: auto"  class="btn btn-primary">Add new Customer</a>
   </div>
 </div>
 <div class="row mg-0" style="height: 70vh; margin: 0">
@@ -46,9 +46,9 @@
         <td >{{customer.idCard}}</td>
         <td >{{customer.phoneNumber}}</td>
         <td >{{customer.email}}</td>
-        <td> <button   type="button" class="btn btn-warning">
+        <td> <a routerLink="/edit-customer"><button   type="button" class="btn btn-warning">
           Edit
-        </button></td>
+        </button></a></td>
         <td> <button   type="button" class="btn btn-danger">
           Delete
         </button></td>

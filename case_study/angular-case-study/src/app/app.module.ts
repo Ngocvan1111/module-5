@@ -15,6 +15,7 @@ import {EditFacilityComponent} from './component/edit-facility/edit-facility.com
 import {CreateFacilityComponent} from './component/create-facility/create-facility.component';
 import { Task29DanhSachHopDongComponent } from './component/task29-danh-sach-hop-dong/task29-danh-sach-hop-dong.component';
 import { HomeComponent } from './component/home/home.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,11 +30,13 @@ import { HomeComponent } from './component/home/home.component';
     EditFacilityComponent,
     CreateFacilityComponent,
     Task29DanhSachHopDongComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,108 @@
+<div class="row" style="margin: 20px 0 ">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+      <table>
+        <tr>
+          <td> Email: </td>
+          <td> <span><input type="text" id="email" name="email" formControlName="email"></span>
+            <span style="color: red" *ngIf="contactForm.controls.email.hasError('required')&& contactForm.controls.email.touched"> Email không được để trống</span>
+            <span style="color: red"  *ngIf="contactForm.controls.email.hasError('email')&& contactForm.controls.email.dirty"> Email không đúng định dạng</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Password:
+          </td>
+          <td>
+            <span><input type="password" id="password" name="password" formControlName="password"></span>
+            <span style="color: red" *ngIf="contactForm.controls.password.hasError('required')&& contactForm.controls.password.touched"> Không được để trống</span>
+            <span style="color: red"  *ngIf="contactForm.controls.password.hasError('minlength')&& contactForm.controls.password.dirty"> Phải đủ 6 ký tự</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Confirm Password:</td>
+          <td>
+            <span><input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword"></span>
+            <span style="color: red" *ngIf="contactForm.controls.confirmPassword.hasError('required')&& contactForm.controls.confirmPassword.touched">Không được để trống</span>
+            <span style="color: red" *ngIf="contactForm.hasError('invalidConformPassword')&& contactForm.controls.confirmPassword.dirty">Xác nhận mật khẩu không đúng</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            country:
+          </td>
+          <td>
+            <span> <select id="country" name="country" formControlName="country">
+          <option [ngValue]="c.id" *ngFor="let c of countryList">
+            {{c.name}}
+          </option>
+        </select></span>
+            <span style="color: red" *ngIf="contactForm.controls.country.hasError('required')&& contactForm.controls.country.touched">Không được để trống</span>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td>Age:</td>
+          <td>
+            <span> <input type="text" id="age" name="age" formControlName="age"></span>
+            <span style="color: red" *ngIf="contactForm.controls.age.hasError('required')&& contactForm.controls.age.touched">Không được để trống</span>
+            <span style="color: red" *ngIf="contactForm.controls.age.hasError('agecheck')&& contactForm.controls.age.dirty">Chưa đủ tuổi</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <span>  <input type="radio" value="male" class="gender" name="gender" formControlName="gender"> Male</span>
+            <span>  <input type="radio" value="female" class="gender" name="gender" formControlName="gender"> Female</span>
+            <span style="color: red" *ngIf="contactForm.controls.gender.hasError('required')&& contactForm.controls.gender.touched">Không được để trống</span>
+
+          </td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td>
+            <span><input type="text" id="phone" name="phone" formControlName="phone"></span>
+            <span style="color: red" *ngIf="contactForm.controls.phone.hasError('required')&& contactForm.controls.phone.touched">Không được để trống</span>
+            <span style="color: red" *ngIf="contactForm.controls.phone.hasError('pattern')&& contactForm.controls.phone.dirty">Sai định dạng</span>
+
+          </td>
+        </tr>
+      </table>
+      <p>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </p>
+
+    </form>
+
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+<div>
+  <h1 style="color: blue; text-align: center">List register </h1>
+</div>
+
+<table class="table table-success table-striped" >
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Age</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let list1 of lists">
+  <tr>
+    <td>{{list1.email}}</td>
+    <td>{{list1.password}}</td>
+    <td>{{list1.age}}</td>
+    <td>
+      {{list1.country.name}}
+    </td>
+  </tr>
+
+  </tbody>
+</table>

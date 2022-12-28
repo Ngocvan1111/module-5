@@ -1,0 +1,29 @@
+<form autocomplete="off" #bookForm="ngForm" (ngSubmit)="addBook(bookForm.value)">
+  <div class="form-group">
+    <label for="bookName">Book Name</label>
+    <input id="bookName" required minlength="4" name="name" [(ngModel)] = "book.name" type="text" class="form-control">
+
+
+    <label for="year">Year</label>
+    <input id="year"  name="year" [(ngModel)] = "book.year" type="text" class="form-control">
+
+    <label for="stars">Stars</label>
+    <input id="stars"  name="stars" [(ngModel)] = "book.stars" type="text" class="form-control">
+    <pre>{{ bookForm.value | json }}</pre>
+    <pre>{{bookForm.controls.name?.errors | json}}</pre>
+    <button type="submit" class="btn btn-primary mr-1">Save</button>
+  </div>
+
+</form>
+<table>
+  <tr>
+    <th>Book name</th>
+    <th>Year</th>
+    <th>Stars</th>
+  </tr>
+  <tr *ngFor="let book of books">
+    <td>{{book.name}}</td>
+    <td>{{book.year}}</td>
+    <td>{{book.stars}}</td>
+  </tr>
+</table>

@@ -1,0 +1,37 @@
+<div class="row" style="margin: 20px 0 ">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+      <table>
+        <tr>
+          <td> user Name: </td>
+          <td> <span><input type="text" id="userName" name="userName" formControlName="userName"></span>
+            <span style="color: red" *ngIf="loginForm.controls.userName.hasError('required')&& loginForm.controls.userName.touched">Không được để trống</span>
+            <span style="color: red"  *ngIf="loginForm.hasError('invalidc')&& loginForm.controls.userName.dirty">Tài khoản không tồn tại</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Password:
+          </td>
+          <td>
+            <span><input type="password" id="password" name="password" formControlName="password"></span>
+            <span style="color: red" *ngIf="loginForm.controls.password.hasError('required')&& loginForm.controls.password.touched"> Không được để trống</span>
+            <span style="color: red"  *ngIf="loginForm.hasError('invalidc')&& loginForm.controls.password.dirty">Mật khẩu không trùng khớp</span>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </p>
+
+    </form>
+
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+
+
+
