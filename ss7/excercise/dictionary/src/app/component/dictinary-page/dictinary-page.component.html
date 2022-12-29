@@ -1,0 +1,25 @@
+<h2 style="color: aqua">List word of dictionary !!!!</h2>
+<div>
+  <ul *ngFor="let word of wordList">
+<!--    <li routerLink="/detail" class="hover">{{word.word}}</li>-->
+    <li [routerLink]="['/detail',word.word]" class="hover">{{word.word}}</li>
+  </ul>
+</div>
+<!--<div *ngFor="let word of wordList">-->
+<!--  <h1 [routerLink]=["/detail",word.word]>{{word.word}}</h1>-->
+<!--</div>-->
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <td>word</td>-->
+<!--      <td> detail</td>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr *ngFor="let word of wordList">-->
+<!--      <td>{{word.word}}</td>-->
+<!--      <td><button routerLink="/detail">detail</button></td>-->
+<!--    </tr>-->
+
+<!--  </tbody>-->
+<!--</table>-->
