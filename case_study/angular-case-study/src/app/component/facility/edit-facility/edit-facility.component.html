@@ -1,0 +1,132 @@
+
+<div class="row mg-0" style="height: 70vh ">
+  <div class="col-md-5"></div>
+  <div class="col-md-3" style=" background-image: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE)">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()"
+          class="align-items-center; align-content-center">
+      <div class="row my-3" >
+        <h2 style="text-align: center;color: black">CREATE NEW FACILITY</h2>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Facility Type</label>
+        </div>
+        <div class="col-md-6">
+          <select  id="facilityType" name="facilityType" formControlName="facilityType">
+            <option value="">
+              -- Choice facility type --
+            </option>
+            <option [ngValue]="ft.id" *ngFor="let ft of facilityTypeList">
+              {{ft.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Service Name </label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="name" name="name" formControlName="name"/></label>
+          <label style="color: red" *ngIf="createForm.controls.name.hasError('required')&& createForm.controls.name.touched">Không được để trống</label>
+          <!--          <label style="color: red" *ngIf="createForm.controls.name.hasError('pattern')&& createForm.controls.name.touched">Tên sai định dạng</label>-->
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Area</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="area" name="area" formControlName="area"/></label>
+          <label style="color: red" *ngIf="createForm.controls.area.hasError('required')&& createForm.controls.area.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="createForm.controls.area.hasError('min')&& createForm.controls.area.dirty">Diện tích phải lớn hơn 0</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Cost</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="cost" name="cost" formControlName="cost"/></label>
+          <label style="color: red" *ngIf="createForm.controls.cost.hasError('required')&& createForm.controls.cost.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="createForm.controls.cost.hasError('min')&& createForm.controls.cost.dirty">Giá phải lớn hơn 0</label>
+
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Max people</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="maxPeople" name="maxPeople" formControlName="maxPeople" /></label>
+          <label style="color: red" *ngIf="createForm.controls.maxPeople.hasError('required')&& createForm.controls.maxPeople.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="createForm.controls.maxPeople.hasError('min')&& createForm.controls.maxPeople.dirty">Số lượng người phải lớn hơn 0</label>
+
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Rent type</label>
+        </div>
+        <div class="col-md-6">
+          <select id="rentType" name="rentType" formControlName="rentType">
+            <option value="">
+              -- Choice Rent type --
+            </option>
+            <option [ngValue]="rt.id" *ngFor="let rt of rentTypeList">
+              {{rt.name}}
+            </option>
+          </select>
+        </div>
+        <label style="color: red" *ngIf="createForm.controls.standardRoom.hasError('required')&& createForm.controls.standardRoom.touched">Không được để trống</label>
+      </div>
+
+      <div class="row my-2" id="id-villa-house-standard-room">
+        <div class="col-md-6" >
+          <label>Standard room</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="standardRoom" name="standardRoom" formControlName="standardRoom"/></label>
+        </div>
+      </div>
+      <div class="row my-2" id="id-villa-house-des">
+        <div class="col-md-6">
+          <label>Description other convenience</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" /></label>
+        </div>
+      </div>
+      <div class="row my-2" id="id-villa-pool-area">
+        <div class="col-md-6">
+          <label>Pool area</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text"/></label>
+        </div>
+      </div>
+      <div class="row my-2" id="id-villa-house-number-floors">
+        <div class="col-md-6">
+          <label>Number floors</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" /></label>
+        </div>
+      </div>
+      <div class="row my-2" id="id-room-facility-free" >
+        <div class="col-md-6">
+          <label>Facility free</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" /></label>
+        </div>
+      </div>
+
+      <div class="row my-5">
+        <label style="text-align: center" ><input style="min-width: 100px" class="text-primary" type="submit" value="Edit"/>
+        </label>
+
+      </div>
+    </form>
+  </div>
+</div>

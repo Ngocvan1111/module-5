@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerType} from '../../model/customer/customer-type';
+import {CustomerType} from '../../../model/customer/customer-type';
 
 @Component({
   selector: 'app-task27-them-moi-khach-hang',

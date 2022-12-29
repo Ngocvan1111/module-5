@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer} from '../../model/customer/customer';
+import {Customer} from '../../../model/customer/customer';
 
 @Component({
   selector: 'app-task25-danh-sach-khach-hang',
@@ -7,6 +7,7 @@ import {Customer} from '../../model/customer/customer';
   styleUrls: ['./task25-danh-sach-khach-hang.component.css']
 })
 export class Task25DanhSachKhachHangComponent implements OnInit {
+  temp: Customer = {id: 0, name: '', customerType: {id: 0, name: ''}};
   customers: Customer [] = [
     {id: 1,
      customerType: {id: 1, name: 'Diamond'},

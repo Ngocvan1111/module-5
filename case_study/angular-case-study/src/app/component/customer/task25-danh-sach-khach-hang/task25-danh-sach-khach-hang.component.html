@@ -46,10 +46,10 @@
         <td >{{customer.idCard}}</td>
         <td >{{customer.phoneNumber}}</td>
         <td >{{customer.email}}</td>
-        <td> <a routerLink="/edit-customer"><button   type="button" class="btn btn-warning">
+        <td> <a routerLink="/edit-customer"><button   type="button" class="btn btn-warning" >
           Edit
         </button></a></td>
-        <td> <button   type="button" class="btn btn-danger">
+        <td> <button   type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = customer">
           Delete
         </button></td>
       </tr>
@@ -57,3 +57,4 @@
     </table>
   </div>
 </div>
+<app-delete-modal-customer [customer]="temp"></app-delete-modal-customer>

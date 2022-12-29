@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomerType} from '../../model/customer/customer-type';
+import {CustomerType} from '../../../model/customer/customer-type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
