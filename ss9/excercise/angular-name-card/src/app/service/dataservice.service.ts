@@ -18,5 +18,8 @@ export class DataserviceService {
     console.log("not ok")
     return  this.httpClient.post('http://localhost:3000/todos', product)
   }
+  deleteById(id: number){
+    return this.httpClient.delete('http://localhost:3000/todos/' +id);
+  }
 }
 

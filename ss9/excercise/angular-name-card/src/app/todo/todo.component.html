@@ -4,10 +4,17 @@
 <div class="col-md-8 offset-2">
   <input type="text" class="form-control" [formControl]="content" (change)="change()" >
   <ul>
-    <li (click)="toggleTodo(i)"
-        [class.complete]="todo.complete"
+    <li
         *ngFor="let todo of todos; index as i">
-      {{todo.content}}
+      <ul>
+        <li (click)="toggleTodo(i)"
+            [class.complete]="todo.complete">  {{todo.content}}</li>
+        <li>  <button (click)="deleteTodo(todo.id)">delete</button></li>
+      </ul>
+
+
     </li>
+
+
   </ul>
 </div>

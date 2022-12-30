@@ -44,6 +44,19 @@ export class TodoComponent implements OnInit {
       console.log("ok")
       this.content.reset();
     }
-  }
 
-}
+
+    }
+
+  deleteTodo(id: any){
+    alert("delete: "+ id)
+    this.dataserviceService.deleteById(id).subscribe(data =>{
+    })
+    this.dataserviceService.getAll().subscribe(data =>{
+      console.log(data)
+      this.todos = data;
+    })
+
+
+  }
+  }
