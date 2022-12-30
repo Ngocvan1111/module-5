@@ -1,0 +1,96 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "todos": [
+    {
+      "id": 1,
+      "content": "Do home work",
+      "complele": true
+    },
+    {
+      "id": 2,
+      "content": "sadasd",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "content": "asdsad",
+      "complete": false
+    },
+    {
+      "id": 4,
+      "content": "asdasd",
+      "complete": false
+    },
+    {
+      "content": "asdsad",
+      "complete": false,
+      "id": 5
+    },
+    {
+      "content": "asdasd",
+      "complete": false,
+      "id": 6
+    },
+    {
+      "content": "asdsa",
+      "complete": false,
+      "id": 7
+    },
+    {
+      "content": "da",
+      "complete": false,
+      "id": 8
+    },
+    {
+      "content": "d",
+      "complete": false,
+      "id": 9
+    },
+    {
+      "content": "asd",
+      "complete": false,
+      "id": 10
+    },
+    {
+      "content": "sa",
+      "complete": false,
+      "id": 11
+    },
+    {
+      "content": "sadas",
+      "complete": false,
+      "id": 12
+    },
+    {
+      "content": "asdsad",
+      "complete": false,
+      "id": 13
+    },
+    {
+      "content": "asdsad",
+      "complete": false,
+      "id": 14
+    },
+    {
+      "content": "asdasd",
+      "complete": false,
+      "id": 15
+    }
+  ]
+}

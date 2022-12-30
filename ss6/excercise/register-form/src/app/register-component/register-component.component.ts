@@ -38,11 +38,11 @@ export class RegisterComponentComponent implements OnInit {
       age: new FormControl('',[Validators.required, this.checkAge]),
       gender: new FormControl('', Validators.required),
       phone: new FormControl('',[Validators.required, Validators.pattern('[+][8][4][0-9]{9,10}')])
-    }, this.mustmatch)
+    }, this.mustMatch)
   }
   ngOnInit(): void {
   }
-  mustmatch(contactForm: any){
+  mustMatch(contactForm: any){
       const password = contactForm.controls.password.value;
       const conPassword = contactForm.controls.confirmPassword.value;
       console.log("psw"+password);

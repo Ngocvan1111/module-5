@@ -2,13 +2,13 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
 
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <table>
         <tr>
-          <td> Email: </td>
-          <td> <span><input type="text" id="email" name="email" formControlName="email"></span>
+          <td> Email:</td>
+          <td><span><input type="text" id="email" name="email" formControlName="email"></span>
             <span style="color: red" *ngIf="contactForm.controls.email.hasError('required')&& contactForm.controls.email.touched"> Email không được để trống</span>
-            <span style="color: red"  *ngIf="contactForm.controls.email.hasError('email')&& contactForm.controls.email.dirty"> Email không đúng định dạng</span>
+            <span style="color: red" *ngIf="contactForm.controls.email.hasError('email')&& contactForm.controls.email.dirty"> Email không đúng định dạng</span>
           </td>
         </tr>
         <tr>
@@ -18,7 +18,7 @@
           <td>
             <span><input type="password" id="password" name="password" formControlName="password"></span>
             <span style="color: red" *ngIf="contactForm.controls.password.hasError('required')&& contactForm.controls.password.touched"> Không được để trống</span>
-            <span style="color: red"  *ngIf="contactForm.controls.password.hasError('minlength')&& contactForm.controls.password.dirty"> Phải đủ 6 ký tự</span>
+            <span style="color: red" *ngIf="contactForm.controls.password.hasError('minlength')&& contactForm.controls.password.dirty"> Phải đủ 6 ký tự</span>
           </td>
         </tr>
         <tr>
@@ -30,18 +30,14 @@
           </td>
         </tr>
         <tr>
+          <td>country:</td>
           <td>
-            country:
-          </td>
-          <td>
-            <span> <select id="country" name="country" formControlName="country">
-          <option [ngValue]="c.id" *ngFor="let c of countryList">
-            {{c.name}}
-          </option>
-        </select></span>
+            <span>
+              <select id="country" name="country" formControlName="country">
+                <option [ngValue]="c.id" *ngFor="let c of countryList">{{c.name}}</option>
+              </select>
+            </span>
             <span style="color: red" *ngIf="contactForm.controls.country.hasError('required')&& contactForm.controls.country.touched">Không được để trống</span>
-
-
           </td>
         </tr>
         <tr>
@@ -58,7 +54,6 @@
             <span>  <input type="radio" value="male" class="gender" name="gender" formControlName="gender"> Male</span>
             <span>  <input type="radio" value="female" class="gender" name="gender" formControlName="gender"> Female</span>
             <span style="color: red" *ngIf="contactForm.controls.gender.hasError('required')&& contactForm.controls.gender.touched">Không được để trống</span>
-
           </td>
         </tr>
         <tr>
@@ -67,7 +62,6 @@
             <span><input type="text" id="phone" name="phone" formControlName="phone"></span>
             <span style="color: red" *ngIf="contactForm.controls.phone.hasError('required')&& contactForm.controls.phone.touched">Không được để trống</span>
             <span style="color: red" *ngIf="contactForm.controls.phone.hasError('pattern')&& contactForm.controls.phone.dirty">Sai định dạng</span>
-
           </td>
         </tr>
       </table>
@@ -85,7 +79,7 @@
   <h1 style="color: blue; text-align: center">List register </h1>
 </div>
 
-<table class="table table-success table-striped" >
+<table class="table table-success table-striped">
   <thead>
   <tr>
     <th>Email</th>
