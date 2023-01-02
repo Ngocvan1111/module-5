@@ -1,8 +1,8 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Product} from "../../model/product";
 import {ProductService} from "../../service/product.service";
 import {ActivatedRoute, Route, Router} from "@angular/router";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Category} from "../../model/category";
 
 @Component({
@@ -11,32 +11,21 @@ import {Category} from "../../model/category";
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit, OnChanges {
-
-  @Input()
+  @Output()
+  abc = new EventEmitter();
   id: number = 0;
   product: Product = {category:{id: 0, name: ""}}
   categoryList: Category[] = [];
-  productForm = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    price: new FormControl(),
-    description: new FormControl(),
-    category: new FormControl()
-  });
+  productForm: FormGroup;
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
     this.productService.getAllCategory().subscribe(date=>{
       this.categoryList = date
-    }, error => {}, ()=>{})
+    }, error => {}, ()=>{});
 
 
-  }
-
-  ngOnInit(): void {
-  }
-  ngOnChanges(changes: SimpleChanges): void {
 
     this.activatedRoute.paramMap.subscribe(data => {
       // @ts-ignore
@@ -58,20 +47,34 @@ export class ProductEditComponent implements OnInit, OnChanges {
     })
 
     this.productForm = new FormGroup({
-      id: new FormControl(),
+      id: new FormControl('',Validators.required),
       name: new FormControl(),
       price: new FormControl(),
       description: new FormControl(),
       category: new FormControl()
     });
+
+
+  }
+
+  ngOnInit(): void {
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+  }
+  compareFn(c1: Product, c2: Product): boolean {
+    return c1.id === c2.id;
   }
 
 
   submit() {
     if (this.productForm.valid) {
-      this.productService.edit(this.productForm.value)
+      this.productService.edit( this.productForm.value.id,this.productForm.value).subscribe(date=>{
+        console.log(date)
+        console.log(this.productForm.value.category)
+      })
       alert("Sua thanh cong" + this.productForm.value.id)
-      this.router.navigateByUrl("product/list")
+      this.abc.emit("hello word")
+      this.router.navigateByUrl("product/list").then(r => {})
     }
 
   }

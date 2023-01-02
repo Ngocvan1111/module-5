@@ -19,9 +19,19 @@
   "products": [
     {
       "id": 2,
-      "name": " Iphone 12",
-      "price": 120000,
-      "description": "in sell",
+      "name": "iphone11",
+      "price": 15000,
+      "description": "sản phẩm tốt",
+      "category": {
+        "id": 1,
+        "name": "smart phone"
+      }
+    },
+    {
+      "id": 2,
+      "name": "iphone12",
+      "price": 25000,
+      "description": "sản phẩm tốt",
       "category": {
         "id": 1,
         "name": "smart phone"
@@ -29,12 +39,12 @@
     },
     {
       "id": 3,
-      "name": "iphone 7",
-      "price": 13000,
-      "description": "sieu vip",
+      "name": "iphone142333",
+      "price": "45000",
+      "description": "sản phẩm tốt",
       "category": {
-        "id": 1,
-        "name": "Smart phone"
+        "id": 2,
+        "name": "laptop"
       }
     }
   ],

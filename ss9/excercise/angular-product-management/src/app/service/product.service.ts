@@ -25,32 +25,12 @@ export class ProductService {
      return  this.httpClient.get<Product>(' http://localhost:3000/products/'+ number);
 
   }
-  //
-  // deleteById(id: number | undefined) {
-  //   if(id != null){
-  //     let product = this.findById(id);
-  //     if (product != null){
-  //       let length = this.products.length
-  //       for (let i = 0; i< length; i++){
-  //         if(product.id === this.products[i].id){
-  //           this.products.splice(i,1);
-  //           break;
-  //         }
-  //       }
-  //     }
-  //   }
-  //
-  // }
-  //
-  // edit(product: Product) {
-  //   for(let i = 0; i< this.products.length; i++){
-  //     if(this.products[i].id == product.id){
-  //       this.products[i] = product;
-  //       break;
-  //     }
-  //   }
-  //
-  // }
+
+  edit(id: number, product: any) {
+    // @ts-ignore
+    return this.httpClient.put(' http://localhost:3000/products/' + id, product)
+
+  }
   deleteById(id: number | undefined) {
     return  this.httpClient.delete('http://localhost:3000/products/'+ id)
 

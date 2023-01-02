@@ -18,6 +18,20 @@
       <td><input type="text" name="description" formControlName="description" ngModel="{{product.description}}"></td>
     </tr>
     <tr>
+      <td>Thể loại: </td>
+      <td><select
+        class="form-select"
+        id="category"
+        formControlName="category"
+        [compareWith]="compareFn"
+        [(ngModel)]="product.category"
+      >
+        <option *ngFor="let category of categoryList" [ngValue]="category">
+          {{category.name}}
+        </option>
+      </select></td>
+    </tr>
+    <tr>
       <td></td>
       <td><button>Edit</button></td>
     </tr>

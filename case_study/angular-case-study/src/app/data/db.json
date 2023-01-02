@@ -1,0 +1,233 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Member"
+    }
+  ],
+  "customers":  [
+  {"id": 1,
+    "customerType": {"id": 1, "name": "Diamond"},
+    "name": "Nguyễn Văn Chung",
+    "dateOfBirth": "1994-12-06",
+    "idCard": "245236243",
+    "phoneNumber": "0393090815",
+    "email": "l.v.ngoc94@gmail.com",
+    "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+  },
+  {"id": 2,
+    "customerType": {"id": 2, "name": "Gold"},
+    "name": "Nguyễn Văn Chung",
+    "dateOfBirth": "1994-12-06",
+    "idCard": "245236243",
+    "phoneNumber": "0393090815",
+    "email": "l.v.ngoc94@gmail.com",
+    "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+  },
+  {"id": 3,
+    "customerType": {"id": 3, "name": "Member"},
+    "name": "Đặng Thị Nhi",
+    "dateOfBirth": "1994-10-20",
+    "idCard": "245236243",
+    "phoneNumber": "0393090815",
+    "email": "l.v.ngoc94@gmail.com",
+    "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+  },
+  {"id": 4,
+    "customerType": {"id": 1, "name": "Diamond"},
+    "name": "Lại Văn Ngọc",
+    "dateOfBirth": "1994-12-06",
+    "idCard": "245236243",
+    "phoneNumber": "0393090815",
+    "email": "l.v.ngoc94@gmail.com",
+    "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+  },
+    {"id": 5,
+      "customerType": {"id": 1, "name": "Diamond"},
+      "name": "Lại Văn Ngọc",
+      "dateOfBirth": "1994-12-06",
+      "idCard": "245236243",
+      "phoneNumber": "0393090815",
+      "email": "l.v.ngoc94@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    },
+    {"id": 6,
+      "customerType": {"id": 1, "name": "Diamond"},
+      "name": "Lại Văn Ngọc",
+      "dateOfBirth": "1994-12-06",
+      "idCard": "245236243",
+      "phoneNumber": "0393090815",
+      "email": "l.v.ngoc94@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    },
+    {"id": 7,
+      "customerType": {"id": 1, "name": "Diamond"},
+      "name": "Lại Văn Ngọc",
+      "dateOfBirth": "1994-12-06",
+      "idCard": "245236243",
+      "phoneNumber": "0393090815",
+      "email": "l.v.ngoc94@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    }
+  ],
+  "facilityType": {"id": 1, "name": "House"},
+  "facilitys": [
+  {"id": 1,
+    "name": "Villa 01",
+    "area": 100,
+    "cost": 200,
+    "maxPeople": 10,
+    "facilityType": {"id": 1, "name": "vila"},
+    "rentType": {"id": 1, "name": "Hour"},
+    "standardRoom": "Vip",
+    "descriptionOtherConvenience": "super comfortable",
+    "poolArea": 300,
+    "numberOfFloors": 22
+  },
+  {"id": 2,
+    "name": "Vila 02",
+    "area": 100,
+    "cost": 200,
+    "maxPeople": 10,
+    "facilityType": {"id": 1, "name": "vila"},
+    "rentType": {"id": 1, "name": "Hour"},
+    "standardRoom": "Vip",
+    "descriptionOtherConvenience": "super comfortable",
+    "poolArea": 300,
+    "numberOfFloors": 22
+  },
+  {"id": 3,
+    "name": "Room 01",
+    "area": 100,
+    "cost": 200,
+    "maxPeople": 10,
+    "facilityType": {"id": 1, "name": "room"},
+    "rentType": {"id": 1, "name": "Hour"},
+    "standardRoom": "Vip",
+    "descriptionOtherConvenience": "super comfortable",
+    "poolArea": 300,
+    "numberOfFloors": 22,
+    "facilityFree": "Free breakfast, massage"
+  },
+  {"id": 4,
+    "name": "Room 02",
+    "area": 100,
+    "cost": 200,
+    "maxPeople": 10,
+    "facilityType": {"id": 1, "name": "room"},
+    "rentType": {"id": 1, "name": "Hour"},
+    "standardRoom": "Vip",
+    "descriptionOtherConvenience": "super comfortable",
+    "poolArea": 300,
+    "numberOfFloors": 22,
+    "facilityFree": "50% fee"
+  },
+  {"id": 5,
+    "name": "House 01",
+    "area": 100,
+    "cost": 200,
+    "maxPeople": 10,
+    "facilityType": {"id": 1, "name": "house"},
+    "rentType": {"id": 1, "name": "Hour"},
+    "standardRoom": "Vip",
+    "descriptionOtherConvenience": "super comfortable",
+    "poolArea": 300,
+    "numberOfFloors": 22
+  }
+],
+
+
+
+  "employee": {"id": 1, "name": "Lại Văn Ngọc"},
+
+
+
+
+
+
+  "contracts":  [
+
+  {"id": 1,
+    "employee": {"id": 1, "name": "Lại Văn Ngọc"},
+    "customer": {"id": 1, "name": "Nguyễn Văn Chung", "customerType": {"id": 1, "name": "Diamond"}},
+    "facility": {"id": 1, "name": "Villa 01", "facilityType": {"id": 1, "name": "House"}},
+    "dateStart": "2021-09-01",
+    "dateEnd": "2022-10-12",
+    "deposit": 10000,
+    "totalPay": 1000000
+  },
+    {"id": 2,
+      "employee": {"id": 1, "name": "Lại Văn Ngọc"},
+      "customer": {"id": 1, "name": "Nguyễn Văn Chung", "customerType": {"id": 1, "name": "Diamond"}},
+      "facility": {"id": 1, "name": "Villa 01", "facilityType": {"id": 1, "name": "House"}},
+      "dateStart": "2021-09-01",
+      "dateEnd": "2022-10-12",
+      "deposit": 10000,
+      "totalPay": 1000000
+    },
+    {"id": 3,
+      "employee": {"id": 1, "name": "Lại Văn Ngọc"},
+      "customer": {"id": 1, "name": "Nguyễn Văn Chung", "customerType": {"id": 1, "name": "Diamond"}},
+      "facility": {"id": 1, "name": "Villa 01", "facilityType": {"id": 1, "name": "House"}},
+      "dateStart": "2021-09-01",
+      "dateEnd": "2022-10-12",
+      "deposit": 10000,
+      "totalPay": 1000000
+    },
+    {"id": 4,
+      "employee": {"id": 1, "name": "Lại Văn Ngọc"},
+      "customer": {"id": 1, "name": "Nguyễn Văn Chung", "customerType": {"id": 1, "name": "Diamond"}},
+      "facility": {"id": 1, "name": "Villa 01", "facilityType": {"id": 1, "name": "House"}},
+      "dateStart": "2021-09-01",
+      "dateEnd": "2022-10-12",
+      "deposit": 10000,
+      "totalPay": 1000000
+    },
+    {"id": 5,
+      "employee": {"id": 1, "name": "Lại Văn Ngọc"},
+      "customer": {"id": 1, "name": "Nguyễn Văn Chung", "customerType": {"id": 1, "name": "Diamond"}},
+      "facility": {"id": 1, "name": "Villa 01", "facilityType": {"id": 1, "name": "House"}},
+      "dateStart": "2021-09-01",
+      "dateEnd": "2022-10-12",
+      "deposit": 10000,
+      "totalPay": 1000000
+    },
+    {"id": 6,
+      "employee": {"id": 1, "name": "Lại Văn Ngọc"},
+      "customer": {"id": 1, "name": "Nguyễn Văn Chung", "customerType": {"id": 1, "name": "Diamond"}},
+      "facility": {"id": 1, "name": "Villa 01", "facilityType": {"id": 1, "name": "House"}},
+      "dateStart": "2021-09-01",
+      "dateEnd": "2022-10-12",
+      "deposit": 10000,
+      "totalPay": 1000000
+    }
+  ]
+
+
+
+}
