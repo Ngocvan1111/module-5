@@ -22,6 +22,7 @@
         <div class="col-md-6">
           <label><input id="dateOfBirth" name="dateOfBirth" formControlName="dateOfBirth" type="date"/></label>
           <label style="color: red" *ngIf="createForm.controls.dateOfBirth.hasError('required')&& createForm.controls.dateOfBirth.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="createForm.controls.dateOfBirth.hasError('more18age')&& createForm.controls.dateOfBirth.dirty">Tuổi phải lớn hơn 18</label>
 
         </div>
       </div>
@@ -74,12 +75,11 @@
             <option value="">
               -- choice customer type --
             </option>
-            <option [ngValue]="c.id" *ngFor="let c of customerTypeList">
-              {{c.name}}
+            <option [ngValue]="customerType" *ngFor="let customerType of customerTypeList">
+              {{customerType.name}}
             </option>
           </select>
           <label style="color: red" *ngIf="createForm.controls.customerType.hasError('required')&& createForm.controls.customerType.touched">Không được để trống</label>
-
         </div>
       </div>
 

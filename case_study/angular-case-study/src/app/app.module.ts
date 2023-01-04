@@ -20,6 +20,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DeleteModalCustomerComponent } from './component/customer/delete-modal-customer/delete-modal-customer.component';
 import { DeleteModalContractComponent } from './component/contract/delete-modal-contract/delete-modal-contract.component';
 import {HttpClientModule} from '@angular/common/http';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { DeleteModalFacilityComponent } from './component/facility/delete-modal-facility/delete-modal-facility/delete-modal-facility.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +42,17 @@ import {HttpClientModule} from '@angular/common/http';
     DeleteModalCustomerComponent,
 
     DeleteModalContractComponent,
+
+    DeleteModalFacilityComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

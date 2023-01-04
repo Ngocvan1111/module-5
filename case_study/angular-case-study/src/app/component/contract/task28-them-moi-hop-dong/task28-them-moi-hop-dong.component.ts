@@ -3,6 +3,12 @@ import {Customer} from '../../../model/customer/customer';
 import {Employee} from '../../../model/employee/employee';
 import {Facility} from '../../../model/facility/facility';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomerService} from '../../../service/customer.service';
+import {EmployeeService} from '../../../service/employee.service';
+import {FacilityService} from '../../../service/facility.service';
+import {Contract} from '../../../model/contract/contract';
+import {ContractService} from '../../../service/contract.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-task28-them-moi-hop-dong',
@@ -11,23 +17,35 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class Task28ThemMoiHopDongComponent implements OnInit {
   customerList: Customer[] = [
-    {id: 1, name: 'Lại Văn Ngọc', customerType: {id: 1, name: 'diamond'}},
-    {id: 2, name: 'Trần Văn Lộc', customerType: {id: 2, name: 'diamond'}},
-    {id: 3, name: 'Nguyễn Thị Thủy', customerType: {id: 3, name: 'diamond'}}
+    {id: 0, name: '', customerType: {id: 0, name: ''}},
   ];
   employeeList: Employee[] = [
-    {id: 1, name: 'Lại Văn Ngọc'},
-    {id: 2, name: 'Trần Văn Lộc'},
-    {id: 3, name: 'Nguyễn Thị Thủy'}
+    {id: 0, name: ''},
   ];
   facilityList: Facility[] = [
-    {id: 1, name: 'House 1', facilityType: {id: 1, name: 'House'}},
-    {id: 2, name: 'Villa 1', facilityType: {id: 1, name: 'House'}},
-    {id: 3, name: 'Room 1', facilityType: {id: 1, name: 'House'}},
+    {id: 0, name: '', facilityType: {id: 0, name: ''}}
   ];
+  totalPay: number = 0;
+  // @ts-ignore
+  contract:Contract = {};
   createForm: FormGroup;
 
-  constructor() {
+  constructor(private customerService:CustomerService,
+              private employeeService: EmployeeService,
+              private facilityService: FacilityService,
+              private contractService: ContractService,
+              private router: Router) {
+    this.customerService.getAllCustomer().subscribe(date => {
+      this.customerList = date;
+    }, error => {
+    }, () =>{})
+    this.employeeService.getAllEmployee().subscribe(date => {
+      this.employeeList = date
+    }, error => {}, () => {})
+    this.facilityService.getAllFacility().subscribe(date => {
+      this.facilityList = date
+    }, error => {}, () => {})
+
     this.createForm = new FormGroup({
       id: new FormControl(),
       employee: new FormControl('', Validators.required),
@@ -42,11 +60,21 @@ export class Task28ThemMoiHopDongComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  calculateTotalPay(){
+    if(this.createForm.value.deposit != undefined || this.createForm.value.deposit != null){
+        this.totalPay = this.createForm.value.deposit*10;
+    }
+  }
 
   // tslint:disable-next-line:typedef
-  onSubmit() {
+  onSubmit(){
     if (this.createForm.valid){
-      alert('Thêm mới thành công !!!');
-    }
+      this.contractService.saveContract(this.createForm.value).subscribe(date=>{
+        console.log(date)
+        this.createForm.reset();
+        alert("Thêm mới thành công")
+        this.router.navigateByUrl("task29-danh-sach-hop-dong").then(r => {})
+      })}
+    else {  alert('Submit thất bại'); }
   }
 }

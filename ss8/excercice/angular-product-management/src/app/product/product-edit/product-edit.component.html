@@ -1,0 +1,40 @@
+<h1>Edit san pham</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Mã sản phẩm:</td>
+      <td><input type="number" formControlName="id" name="id" ngModel="{{product.id}}"></td>
+    </tr>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" name="name" formControlName="name" ngModel="{{product.name}}"></td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" name="price" formControlName="price" ngModel="{{product.price}}"></td>
+    </tr>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" name="description" formControlName="description" ngModel="{{product.description}}"></td>
+    </tr>
+    <tr>
+      <td>Thể loại: </td>
+      <td><select
+        class="form-select"
+        id="category"
+        formControlName="category"
+        [compareWith]="compareFn"
+        [(ngModel)]="product.category"
+      >
+        <option *ngFor="let category of categoryList" [ngValue]="category">
+          {{category.name}}
+        </option>
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Edit</button></td>
+    </tr>
+  </table>
+</form>
+<h1 style="color: red">hello {{product.name}} </h1>

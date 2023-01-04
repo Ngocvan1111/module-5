@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {FacilityType} from '../../../model/facility/facility-type';
 import {RentType} from '../../../model/facility/rent-type';
+import {RentTypeService} from '../../../service/rent-type.service';
+import {FacilityService} from '../../../service/facility.service';
+import {FacilityTypeService} from '../../../service/facility-type.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-facility',
@@ -10,20 +14,27 @@ import {RentType} from '../../../model/facility/rent-type';
 })
 export class CreateFacilityComponent implements OnInit {
   facilityTypeList: FacilityType[] = [
-    {id: 1, name: 'Villa'},
-    {id: 2, name: 'House'},
-    {id: 3, name: 'Room'},
+    {id: 0, name: ''}
   ];
   rentTypeList: RentType[] = [
-    {id: 1, name: 'Hour'},
-    {id: 2, name: 'Day'},
-    {id: 3, name: 'Month'}
+    {id: 0, name: ''},
   ];
+  facilityType: FacilityType =   {id: 0, name: ''};
 
   createForm: FormGroup;
-  constructor() {
+  constructor(private rentTypeService:RentTypeService,
+              private facilityService:FacilityService,
+              private facilityTypeService:FacilityTypeService,
+              private router: Router) {
+    this.facilityTypeService.getAllFacilityType().subscribe(date=>{
+      this.facilityTypeList =date
+    }, error => {}, () => {})
+    this.rentTypeService.getAllRentType().subscribe(date => {
+      this.rentTypeList =date
+    }, error => {}, () => {})
+
     this.createForm = new FormGroup({
-      id: new FormControl('', [Validators.required] ),
+      id: new FormControl( ),
       name: new FormControl('', [Validators.required]),
       area: new FormControl('', [Validators.required, Validators.min(0)]),
       cost: new FormControl('', [Validators.required, Validators.min(0)]),
@@ -41,7 +52,14 @@ export class CreateFacilityComponent implements OnInit {
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
-  onSubmit() {
-  alert('ok');
+
+  onSubmit(){
+    if (this.createForm.valid){
+      this.facilityService.saveFacility(this.createForm.value).subscribe(date=>{
+        this.createForm.reset();
+        alert("Thêm mới thành công")
+        this.router.navigateByUrl("list-facility").then(r => {})
+      })}
+    else {  alert('Submit thất bại'); }
   }
 }

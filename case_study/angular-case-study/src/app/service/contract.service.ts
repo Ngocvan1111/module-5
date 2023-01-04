@@ -13,4 +13,7 @@ export class ContractService {
     return this.httpClient.get<Contract[]>('    http://localhost:3000/contracts');
 
   }
+  saveContract(contract: any) {
+    return this.httpClient.post('http://localhost:3000/contracts', contract);
+  }
 }

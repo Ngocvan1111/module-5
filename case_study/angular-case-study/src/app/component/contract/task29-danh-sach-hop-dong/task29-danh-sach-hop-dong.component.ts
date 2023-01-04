@@ -9,6 +9,7 @@ import {ContractService} from '../../../service/contract.service';
 })
 export class Task29DanhSachHopDongComponent implements OnInit {
   contracts: Contract[] = [];
+  p: number = 1;
 
   constructor(private contractService: ContractService) {
     this.contractService.getAllContract().subscribe(date => {

@@ -8,6 +8,7 @@ import {Task27ThemMoiKhachHangComponent} from './component/customer/task27-them-
 import {Task26SuaThongTinKhachHangComponent} from './component/customer/task26-sua-thong-tin-khach-hang/task26-sua-thong-tin-khach-hang.component';
 import {CreateFacilityComponent} from './component/facility/create-facility/create-facility.component';
 import {Task28ThemMoiHopDongComponent} from './component/contract/task28-them-moi-hop-dong/task28-them-moi-hop-dong.component';
+import {EditFacilityComponent} from './component/facility/edit-facility/edit-facility.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,8 +18,10 @@ const routes: Routes = [
   {path: 'task25-danh-sach-khach-hang', component: Task25DanhSachKhachHangComponent},
   {path: 'add-new-customer', component: Task27ThemMoiKhachHangComponent},
   {path: 'edit-customer', component: Task26SuaThongTinKhachHangComponent},
+  {path: 'edit-customer/:id', component: Task26SuaThongTinKhachHangComponent},
   {path: 'create-facility', component: CreateFacilityComponent},
-  {path: 'create-contract', component: Task28ThemMoiHopDongComponent}
+  {path: 'create-contract', component: Task28ThemMoiHopDongComponent},
+  {path: 'edit-facility/:id', component: EditFacilityComponent}
 ];
 
 @NgModule({

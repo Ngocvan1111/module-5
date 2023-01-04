@@ -11,11 +11,11 @@
           <label>Facility Type</label>
         </div>
         <div class="col-md-6">
-          <select  id="facilityType" name="facilityType" formControlName="facilityType">
+          <select  id="facilityType" name="facilityType" formControlName="facilityType" [(ngModel)]="facilityType">
             <option value="">
              -- Choice facility type --
             </option>
-            <option [ngValue]="ft.id" *ngFor="let ft of facilityTypeList">
+            <option [ngValue]="ft" *ngFor="let ft of facilityTypeList">
               {{ft.name}}
             </option>
           </select>
@@ -72,7 +72,7 @@
             <option value="">
               -- Choice Rent type --
             </option>
-            <option [ngValue]="rt.id" *ngFor="let rt of rentTypeList">
+            <option [ngValue]="rt" *ngFor="let rt of rentTypeList">
               {{rt.name}}
             </option>
           </select>
@@ -80,7 +80,7 @@
         <label style="color: red" *ngIf="createForm.controls.standardRoom.hasError('required')&& createForm.controls.standardRoom.touched">Không được để trống</label>
       </div>
 
-      <div class="row my-2" id="id-villa-house-standard-room">
+      <div class="row my-2" id="id-villa-house-standard-room" >
         <div class="col-md-6" >
           <label>Standard room</label>
         </div>
@@ -88,15 +88,15 @@
           <label><input type="text" id="standardRoom" name="standardRoom" formControlName="standardRoom"/></label>
         </div>
       </div>
-      <div class="row my-2" id="id-villa-house-des">
+      <div class="row my-2" id="id-villa-house-des" *ngIf="facilityType.name == 'Villa' || facilityType.name == 'House'">
         <div class="col-md-6">
-          <label>Description other convenience</label>
+          <label>Description other convenience</label >
         </div>
         <div class="col-md-6">
           <label><input type="text" /></label>
         </div>
       </div>
-      <div class="row my-2" id="id-villa-pool-area">
+      <div class="row my-2" id="id-villa-pool-area" *ngIf="facilityType.name == 'Villa'">
         <div class="col-md-6">
           <label>Pool area</label>
         </div>
@@ -104,7 +104,7 @@
           <label><input type="text"/></label>
         </div>
       </div>
-      <div class="row my-2" id="id-villa-house-number-floors">
+      <div class="row my-2" id="id-villa-house-number-floors" *ngIf="facilityType.name == 'Villa' || facilityType.name == 'House'">
         <div class="col-md-6">
           <label>Number floors</label>
         </div>
@@ -112,7 +112,7 @@
           <label><input type="text" /></label>
         </div>
       </div>
-      <div class="row my-2" id="id-room-facility-free" >
+      <div class="row my-2" id="id-room-facility-free" *ngIf="facilityType.name == 'Room'">
         <div class="col-md-6">
           <label>Facility free</label>
         </div>

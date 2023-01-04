@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Customer} from '../../../model/customer/customer';
+import {CustomerService} from '../../../service/customer.service';
 
 @Component({
   selector: 'app-delete-modal-customer',
@@ -10,14 +11,18 @@ export class DeleteModalCustomerComponent implements OnInit {
   @Input()
   customer: Customer = {id: 0, name: '', customerType: { id: 0, name: ''}};
 
-  constructor() { }
+  @Output()
+  emiter = new EventEmitter()
+  constructor(private customerService:CustomerService) { }
 
   ngOnInit(): void {
   }
 
   // tslint:disable-next-line:typedef
   deleteCustomer() {
-    document.getElementById('exampleModal')?.click();
+    this.customerService.deleteById(this.customer.id).subscribe(date =>{
+      this.emiter.emit("")
+    });
     alert('delete successfuly');
   }
 }

@@ -12,7 +12,6 @@
         <div class="col-md-6">
           <label><input type="date" id="dateStart" name="dateStart" formControlName="dateStart"/></label>
           <label style="color: red" *ngIf="createForm.controls.dateStart.hasError('required')&& createForm.controls.dateStart.touched">Không được để trống</label>
-
         </div>
       </div>
       <div class="row my-2">
@@ -31,10 +30,8 @@
           <label>Deposit</label>
         </div>
         <div class="col-md-6">
-          <label><input type="text" id="deposit" name="deposit" formControlName="deposit"/></label>
+          <label><input type="text" id="deposit" name="deposit" formControlName="deposit" (ngModelChange)="calculateTotalPay()"/></label>
           <label style="color: red" *ngIf="createForm.controls.deposit.hasError('required')&& createForm.controls.deposit.touched">Không được để trống</label>
-
-
         </div>
       </div>
       <div class="row my-2">
@@ -44,7 +41,7 @@
         <div class="col-md-6">
           <select id="customer" name="customer" formControlName="customer">
             <option value="">-- Choice Customer--</option>
-            <option [ngValue]="c.id" *ngFor="let c of customerList">{{c.name}}</option>
+            <option [ngValue]="c" *ngFor="let c of customerList">{{c.name}}({{c.id}})</option>
           </select>
           <label style="color: red" *ngIf="createForm.controls.customer.hasError('required')&& createForm.controls.customer.touched">Không được để trống</label>
 
@@ -57,7 +54,7 @@
         <div class="col-md-6">
           <select  id="employee" name="employee" formControlName="employee">
             <option value=""> -- Choice Employee -- </option>
-            <option [ngValue]="e.id" *ngFor="let e of employeeList">{{e.name}}</option>
+            <option [ngValue]="e" *ngFor="let e of employeeList">{{e.name}}({{e.id}})</option>
           </select>
           <label style="color: red" *ngIf="createForm.controls.employee.hasError('required')&& createForm.controls.employee.touched">Không được để trống</label>
 
@@ -70,10 +67,18 @@
         <div class="col-md-6">
           <select  id="facility" name="facility" formControlName="facility">
             <option value="">-- Choice Facility --</option>
-            <option [ngValue]="f.id" *ngFor="let f of facilityList">{{f.name}}</option>
+            <option [ngValue]="f" *ngFor="let f of facilityList">{{f.name}}({{f.id}})</option>
           </select>
           <label style="color: red" *ngIf="createForm.controls.facility.hasError('required')&& createForm.controls.facility.touched">Không được để trống</label>
 
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Total Pay</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="totalPay" [(ngModel)]="totalPay" name="totalPay" formControlName="totalPay"/></label>
         </div>
       </div>
 

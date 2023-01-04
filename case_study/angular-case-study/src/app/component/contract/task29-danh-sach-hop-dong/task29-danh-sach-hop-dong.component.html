@@ -24,7 +24,7 @@
       </tr>
 
       </thead>
-      <tbody *ngFor="let contract of contracts; index as i">
+      <tbody *ngFor="let contract of contracts | paginate: {itemsPerPage: 3, currentPage:p}; index as i">
       <tr>
         <td >{{i+1}}</td>
         <td >{{contract.facility.name}}</td>
@@ -49,6 +49,7 @@
 
       </tbody>
     </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 
 </div>

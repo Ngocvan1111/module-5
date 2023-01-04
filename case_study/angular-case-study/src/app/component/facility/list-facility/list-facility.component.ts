@@ -11,6 +11,7 @@ import {FacilityService} from '../../../service/facility.service';
 })
 export class ListFacilityComponent implements OnInit {
   facilitys: Facility [] = [];
+  temp: Facility = {id: 0, name: '', facilityType: {id: 0, name: ''}};
   constructor(private facilityService: FacilityService) {
     this.facilityService.getAllFacility().subscribe(date => {
       this.facilitys = date;
@@ -20,4 +21,10 @@ export class ListFacilityComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  reload() {
+    this.facilityService.getAllFacility().subscribe(date => {
+      this.facilitys = date;
+    }, error => {}, () => {});
+
+  }
 }

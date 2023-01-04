@@ -1,7 +1,7 @@
 <div class="row mg-0" style="height: 70vh ">
   <div class="col-md-4"></div>
   <div class="col-md-4" style=" border-radius: 15px;background-image: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE)">
-    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
       <div class="row my-3">
         <h2 style="text-align: center;color: black">EDIT CUSTOMER</h2>
       </div>
@@ -10,9 +10,17 @@
           <label>Name</label>
         </div>
         <div class="col-md-6">
-          <label><input type="text" id="name" name="name" formControlName="name"/></label>
-          <label style="color: red" *ngIf="createForm.controls.name.hasError('required')&& createForm.controls.name.touched">Không được để trống</label>
-          <label style="color: red" *ngIf="createForm.controls.name.hasError('pattern')&& createForm.controls.name.touched">Tên sai định dạng</label>
+          <label><input type="text" id="id" name="id" formControlName="id" ngModel="{{customer.id}}"/></label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Name</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="name" name="name" formControlName="name" ngModel="{{customer.name}}"/></label>
+          <label style="color: red" *ngIf="editForm.controls.name.hasError('required')&& editForm.controls.name.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.name.hasError('pattern')&& editForm.controls.name.touched">Tên sai định dạng</label>
         </div>
       </div>
       <div class="row my-2">
@@ -20,9 +28,9 @@
           <label>Birthday </label>
         </div>
         <div class="col-md-6">
-          <label><input id="dateOfBirth" name="dateOfBirth" formControlName="dateOfBirth" type="date"/></label>
-          <label style="color: red" *ngIf="createForm.controls.dateOfBirth.hasError('required')&& createForm.controls.dateOfBirth.touched">Không được để trống</label>
-
+          <label><input id="dateOfBirth" name="dateOfBirth" formControlName="dateOfBirth" type="date" ngModel="{{customer.dateOfBirth}}"/></label>
+          <label style="color: red" *ngIf="editForm.controls.dateOfBirth.hasError('required')&& editForm.controls.dateOfBirth.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.dateOfBirth.hasError('more18age')&& editForm.controls.dateOfBirth.dirty">Tuổi phải lớn hơn 18</label>
         </div>
       </div>
       <div class="row my-2">
@@ -30,9 +38,9 @@
           <label>idCard</label>
         </div>
         <div class="col-md-6">
-          <label><input id="idCard" name="idCard" formControlName="idCard" type="text"/></label>
-          <label style="color: red" *ngIf="createForm.controls.idCard.hasError('required')&& createForm.controls.idCard.touched">Không được để trống</label>
-          <label style="color: red" *ngIf="createForm.controls.idCard.hasError('pattern')&& createForm.controls.idCard.dirty">Sai định dạng</label>
+          <label><input id="idCard" name="idCard" formControlName="idCard" type="text" ngModel="{{customer.idCard}}"/></label>
+          <label style="color: red" *ngIf="editForm.controls.idCard.hasError('required')&& editForm.controls.idCard.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.idCard.hasError('pattern')&& editForm.controls.idCard.dirty">Sai định dạng</label>
         </div>
       </div>
       <div class="row my-2">
@@ -40,9 +48,9 @@
           <label>Phone Number</label>
         </div>
         <div class="col-md-6">
-          <label><input id="phoneNumber" name="phoneNumber" formControlName="phoneNumber" type="text"/></label>
-          <label style="color: red" *ngIf="createForm.controls.phoneNumber.hasError('required')&& createForm.controls.phoneNumber.touched">Không được để trống</label>
-          <label style="color: red" *ngIf="createForm.controls.phoneNumber.hasError('pattern')&& createForm.controls.phoneNumber.dirty">Sai định dạng</label>
+          <label><input id="phoneNumber" name="phoneNumber" formControlName="phoneNumber" type="text" ngModel="{{customer.phoneNumber}}"/></label>
+          <label style="color: red" *ngIf="editForm.controls.phoneNumber.hasError('required')&& editForm.controls.phoneNumber.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.phoneNumber.hasError('pattern')&& editForm.controls.phoneNumber.dirty">Sai định dạng</label>
         </div>
       </div>
       <div class="row my-2">
@@ -50,9 +58,9 @@
           <label>Email</label>
         </div>
         <div class="col-md-6">
-          <label><input id="email" name="email" formControlName="email" type="text"/></label>
-          <label style="color: red" *ngIf="createForm.controls.email.hasError('required')&& createForm.controls.email.touched">Không được để trống</label>
-          <label style="color: red" *ngIf="createForm.controls.email.hasError('pattern')&& createForm.controls.email.dirty">Sai định dạng</label>
+          <label><input id="email" name="email" formControlName="email" type="text" ngModel="{{customer.email}}"/></label>
+          <label style="color: red" *ngIf="editForm.controls.email.hasError('required')&& editForm.controls.email.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.email.hasError('pattern')&& editForm.controls.email.dirty">Sai định dạng</label>
         </div>
       </div>
       <div class="row my-2">
@@ -60,8 +68,8 @@
           <label>Address</label>
         </div>
         <div class="col-md-6">
-          <label><input id="address" name="address" formControlName="address" type="text"/></label>
-          <label style="color: red" *ngIf="createForm.controls.address.hasError('required')&& createForm.controls.address.touched">Không được để trống</label>
+          <label><input id="address" name="address" formControlName="address" type="text" ngModel="{{customer.address}}"/></label>
+          <label style="color: red" *ngIf="editForm.controls.address.hasError('required')&& editForm.controls.address.touched">Không được để trống</label>
 
         </div>
       </div>
@@ -70,15 +78,16 @@
           <label>Customer Type</label>
         </div>
         <div class="col-md-6">
-          <select class="form-select-sm" id="customerType" name="customerType" formControlName="customerType">
+          <select class="form-select-sm" id="customerType" name="customerType" formControlName="customerType"   [compareWith]="compareFn"
+                  [(ngModel)]="customer.customerType">
             <option value="">
               -- choice customer type --
             </option>
-            <option [ngValue]="c.id" *ngFor="let c of customerTypeList">
-              {{c.name}}
+            <option [ngValue]="customerType" *ngFor="let customerType of customerTypeList">
+              {{customerType.name}}
             </option>
           </select>
-          <label style="color: red" *ngIf="createForm.controls.customerType.hasError('required')&& createForm.controls.customerType.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.customerType.hasError('required')&& editForm.controls.customerType.touched">Không được để trống</label>
 
         </div>
       </div>
