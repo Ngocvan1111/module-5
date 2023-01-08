@@ -1,0 +1,63 @@
+<div class="row" style="height: 50px;margin: 0">
+  <div class="col-md-3" style="display: flex">
+    <div class="d-flex" style="margin: auto;margin-left: 40px">
+        <button routerLink="/nhap-hang" class="btn btn-primary">Nhập Hàng</button>
+    </div>
+<!--  </div>-->
+<!--  <div class="col-md-6">-->
+<!--    <h1 style="text-align: center;color: #ee00ff"> </h1>-->
+<!--    <input class="form-control me-2" type="text"  [(ngModel)]="sanPham" (ngModelChange)="timKiem()" placeholder="Tên Sản Phẩm" name="sanPham" aria-label="Search">-->
+<!--  </div>-->
+  <div class="col-md-1"></div>
+  <div class="col-md-2  " style="display: flex">
+  </div>
+</div>
+<div class="row mg-0" style="height: 70vh; margin: 0">
+
+  <div class="col-md-12">
+    <table class="table table-success table-striped">
+      <thead>
+      <tr>
+        <th>Stt</th>
+        <th>
+          Mã lô hàng
+        </th>
+        <th>Tên sản phẩm</th>
+        <th>Giá tiền</th>
+        <th>Đơn vị</th>
+        <th>Số lượng</th>
+        <th>Ngày nhập hàng</th>
+        <th>Ngày sản xuất</th>
+        <th>Ngày hết hạn</th>
+        <th colspan="2">Tác vụ</th>
+
+      </tr>
+      </thead>
+      <tbody *ngFor="let consignment of consignments | paginate: {itemsPerPage: 1, currentPage:p};index as i">
+      <tr>
+        <td >  {{i+1}}</td>
+        <td >
+          {{consignment.code}}
+        </td>
+        <td >{{consignment.product.name}}</td>
+        <td >{{consignment.product.price}}</td>
+        <td >{{consignment.product.unit}}</td>
+        <td >{{consignment.amountProduct}}</td>
+        <td >{{consignment.importDate}}</td>
+        <td >{{consignment.dateOfManufacture}}</td>
+        <td >{{consignment.expirationDate}}</td>
+        <td> <button data-bs-toggle="modal" data-bs-target="#editModal" (click)="temp = consignment"   type="button" class="btn btn-warning" >
+          Sửa
+        </button></td>
+        <td> <button   type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = consignment">
+          Xóa
+        </button></td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+<app-delete-modal [consignment]="temp" (emiter)="reload()"></app-delete-modal>
+<app-edit [consignment]="temp" (emiter)="reload()"></app-edit>
+</div>

@@ -1,0 +1,104 @@
+
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row mg-0" >
+            <div class="col-md-12" style=" border-radius: 15px;background-image: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE)">
+                <div class="row my-3">
+                  <h2 style="text-align: center;color: black">NHẬP HÀNG</h2>
+                </div>
+              <div class="row my-2" >
+                <div class="col-md-6">
+                  <label>Mã Lô Hàng</label>
+                </div>
+                <div class="col-md-6">
+                  <label><input type="text" id="id" name="id" formControlName="id"/></label>
+                </div>
+              </div>
+                <div class="row my-2">
+                  <div class="col-md-6">
+                    <label>Mã Lô Hàng</label>
+                  </div>
+                  <div class="col-md-6">
+                    <label><input type="text" id="code" name="code" formControlName="code"/></label>
+                    <label style="color: red" *ngIf="editForm.controls.code.hasError('required')&& editForm.controls.code.touched">Không được để trống</label>
+                    <label style="color: red" *ngIf="editForm.controls.code.hasError('pattern')&& editForm.controls.code.touched">Tên sai định dạng</label>
+                  </div>
+                </div>
+
+                <div class="row my-2">
+                  <div class="col-md-6">
+                    <label>Sản phẩm</label>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select-sm" id="product" name="product" formControlName="product"  [compareWith]="compareFn"
+                            [(ngModel)]="consignment.product">
+                      <option value="">
+                        -- chọn sản phẩm --
+                      </option>
+                      <option [ngValue]="product" *ngFor="let product of products">
+                        {{product.name}}
+                      </option>
+                    </select>
+                    <label style="color: red" *ngIf="editForm.controls.product.hasError('required')&& editForm.controls.product.touched">Không được để trống</label>
+                  </div>
+                </div>
+
+                <div class="row my-2">
+                  <div class="col-md-6">
+                    <label>Số Lượng</label>
+                  </div>
+                  <div class="col-md-6">
+                    <label><input type="number" id="amountProduct" name="amountProduct" formControlName="amountProduct"/></label>
+                    <label style="color: red" *ngIf="editForm.controls.amountProduct.hasError('required')&& editForm.controls.amountProduct.touched">Không được để trống</label>
+                    <label style="color: red" *ngIf="editForm.controls.amountProduct.hasError('min')&& editForm.controls.amountProduct.touched">Số lượng phải lớn hơn không</label>
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col-md-6">
+                    <label>Ngày nhập</label>
+                  </div>
+                  <div class="col-md-6">
+                    <label><input type="date" id="importDate" name="importDate" formControlName="importDate"/></label>
+                    <label style="color: red" *ngIf="editForm.controls.importDate.hasError('required')&& editForm.controls.importDate.touched">Không được để trống</label>
+                    <label style="color: red" *ngIf="editForm.hasError('validateNgayNhapHang')&& editForm.controls.importDate.touched">Ngày nhập hàng phải lớn hơn ngày hết hạn</label>
+
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col-md-6">
+                    <label>Ngày Sản Xuất</label>
+                  </div>
+                  <div class="col-md-6">
+                    <label><input type="date" id="dateOfManufacture" name="dateOfManufacture" formControlName="dateOfManufacture"/></label>
+                    <label style="color: red" *ngIf="editForm.controls.dateOfManufacture.hasError('required')&& editForm.controls.dateOfManufacture.touched">Không được để trống</label>
+                    <label style="color: red" *ngIf="editForm.hasError('validateNgaySanXuat')&& editForm.controls.dateOfManufacture.touched">Ngày sản xuất phải lớn hơn ngày hết hạn</label>
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col-md-6">
+                    <label>Ngày hết hạn</label>
+                  </div>
+                  <div class="col-md-6">
+                    <label><input type="date" id="expirationDate" name="expirationDate" formControlName="expirationDate"/></label>
+                    <label style="color: red" *ngIf="editForm.controls.expirationDate.hasError('required')&& editForm.controls.expirationDate.touched">Không được để trống</label>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+

@@ -1,0 +1,86 @@
+<div class="row mg-0" style="height: 70vh ">
+  <div class="col-md-4"></div>
+  <div class="col-md-4" style=" border-radius: 15px;background-image: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE)">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+      <div class="row my-3">
+        <h2 style="text-align: center;color: black">NHẬP HÀNG</h2>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Mã Lô Hàng</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text" id="code" name="code" formControlName="code"/></label>
+          <label style="color: red" *ngIf="createForm.controls.code.hasError('required')&& createForm.controls.code.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="createForm.controls.code.hasError('pattern')&& createForm.controls.code.touched">Tên sai định dạng</label>
+        </div>
+      </div>
+
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Sản phẩm</label>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select-sm" id="product" name="product" formControlName="product">
+            <option value="">
+              -- chọn sản phẩm --
+            </option>
+            <option [ngValue]="product" *ngFor="let product of products">
+              {{product.name}}
+            </option>
+          </select>
+          <label style="color: red" *ngIf="createForm.controls.product.hasError('required')&& createForm.controls.product.touched">Không được để trống</label>
+        </div>
+      </div>
+
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Số Lượng</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="number" id="amountProduct" name="amountProduct" formControlName="amountProduct"/></label>
+                    <label style="color: red" *ngIf="createForm.controls.amountProduct.hasError('required')&& createForm.controls.amountProduct.touched">Không được để trống</label>
+                    <label style="color: red" *ngIf="createForm.controls.amountProduct.hasError('min')&& createForm.controls.amountProduct.touched">Số lượng phải lớn hơn không</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Ngày nhập</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="date" id="importDate" name="importDate" formControlName="importDate"/></label>
+                    <label style="color: red" *ngIf="createForm.controls.importDate.hasError('required')&& createForm.controls.importDate.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="createForm.hasError('validateNgayNhapHang')&& createForm.controls.importDate.touched">Ngày nhập hàng phải lớn hơn ngày hết hạn</label>
+
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Ngày Sản Xuất</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="date" id="dateOfManufacture" name="dateOfManufacture" formControlName="dateOfManufacture"/></label>
+                    <label style="color: red" *ngIf="createForm.controls.dateOfManufacture.hasError('required')&& createForm.controls.dateOfManufacture.touched">Không được để trống</label>
+                    <label style="color: red" *ngIf="createForm.hasError('validateNgaySanXuat')&& createForm.controls.dateOfManufacture.touched">Ngày sản xuất phải lớn hơn ngày hết hạn</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Ngày hết hạn</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="date" id="expirationDate" name="expirationDate" formControlName="expirationDate"/></label>
+                    <label style="color: red" *ngIf="createForm.controls.expirationDate.hasError('required')&& createForm.controls.expirationDate.touched">Không được để trống</label>
+        </div>
+      </div>
+      <div class="row my-5">
+        <label style="text-align: center" ><input class="text-primary" type="submit" value="Nhập hàng"/>
+        </label>
+      </div>
+      <div class="row my-5" style="text-align: center; align-items: center">
+        <button id="center"  style="  display: inline-block" class="btn btn-primary" routerLink="" style="width: 200px">Quay về danh sách</button>
+      </div>
+    </form>
+  </div>
+</div>
+

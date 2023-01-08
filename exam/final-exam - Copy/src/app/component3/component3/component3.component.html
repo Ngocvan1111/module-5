@@ -1,0 +1,119 @@
+<div class="row mg-0" style="height: 70vh ">
+  <div class="col-md-4"></div>
+  <div class="col-md-4" style=" border-radius: 15px;background-image: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE)">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" *ngIf="editForm.controls.id != null">
+      <div class="row my-3">
+        <h2 style="text-align: center;color: black">CREATE NEW CUSTOMER</h2>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Id</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text"  formControlName="id"/></label>
+          <label style="color: red" *ngIf="editForm.controls.id.hasError('required')&& editForm.controls.id.touched">Không được để trống</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Name</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="text"  formControlName="name"/></label>
+          <label style="color: red" *ngIf="editForm.controls.name.hasError('required')&& editForm.controls.name.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.name.hasError('pattern')&& editForm.controls.name.touched">Tên sai định dạng</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Gender</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="radio"  name="gender" value = "true" formControlName="gender"/>Male</label>
+          <label><input type="radio"  name="gender" value="false" formControlName="gender"/>Female</label>
+          <label style="color: red" *ngIf="editForm.controls.gender.hasError('required')&& editForm.controls.gender.touched">Không được để trống</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Birthday </label>
+        </div>
+        <div class="col-md-6">
+          <label><input id="dateOfBirth" name="dateOfBirth" formControlName="dateOfBirth" type="date"/></label>
+          <label style="color: red" *ngIf="editForm.controls.dateOfBirth.hasError('required')&& editForm.controls.dateOfBirth.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.dateOfBirth.hasError('more18age')&& editForm.controls.dateOfBirth.dirty">Tuổi phải lớn hơn 18</label>
+
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>idCard</label>
+        </div>
+        <div class="col-md-6">
+          <label><input id="idCard" name="idCard" formControlName="idCard" type="text"/></label>
+          <label style="color: red" *ngIf="editForm.controls.idCard.hasError('required')&& editForm.controls.idCard.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.idCard.hasError('pattern')&& editForm.controls.idCard.dirty">Sai định dạng</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Phone Number</label>
+        </div>
+        <div class="col-md-6">
+          <label><input id="phoneNumber" name="phoneNumber" formControlName="phoneNumber" type="text"/></label>
+          <label style="color: red" *ngIf="editForm.controls.phoneNumber.hasError('required')&& editForm.controls.phoneNumber.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.phoneNumber.hasError('pattern')&& editForm.controls.phoneNumber.dirty">Sai định dạng</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Email</label>
+        </div>
+        <div class="col-md-6">
+          <label><input id="email" name="email" formControlName="email" type="text"/></label>
+          <label style="color: red" *ngIf="editForm.controls.email.hasError('required')&& editForm.controls.email.touched">Không được để trống</label>
+          <label style="color: red" *ngIf="editForm.controls.email.hasError('pattern')&& editForm.controls.email.dirty">Sai định dạng</label>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Address</label>
+        </div>
+        <div class="col-md-6">
+          <label><input id="address" name="address" formControlName="address" type="text"/></label>
+          <label style="color: red" *ngIf="editForm.controls.address.hasError('required')&& editForm.controls.address.touched">Không được để trống</label>
+
+        </div>
+      </div>
+
+      <div class="row my-2">
+        <div class="col-md-6">
+          <label>Customer Type</label>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select-sm" id="customerType" name="customerType" formControlName="customerType"   [compareWith]="compareFn"
+                  [(ngModel)]="customer.customerType">
+            <option value="">
+              -- choice customer type --
+            </option>
+            <option [ngValue]="customerType" *ngFor="let customerType of customerTypeList">
+              {{customerType.name}}
+            </option>
+          </select>
+          <label style="color: red" *ngIf="editForm.controls.customerType.hasError('required')&& editForm.controls.customerType.touched">Không được để trống</label>
+
+        </div>
+      </div>
+
+      <div class="row my-5">
+        <label style="text-align: center" ><input class="text-primary" type="submit" value="Create customer"/>
+        </label>
+      </div>
+      <div class="row my-5" style="text-align: center; align-items: center">
+        <button id="center"  style="  display: inline-block" class="btn btn-primary" routerLink="" style="width: 200px">Back to list</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

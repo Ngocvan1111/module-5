@@ -1,0 +1,203 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Member"
+    }
+  ],
+  "customers": [
+    {
+      "id": 2,
+      "name": "Nguyễn Văn Cha",
+      "gender": "true",
+      "customerType": {
+        "id": 3,
+        "name": "Member"
+      },
+      "dateOfBirth": "1994-12-06",
+      "idCard": "245236243",
+      "phoneNumber": "0393090815",
+      "email": "l.v.ngoc96@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    },
+    {
+      "id": 3,
+      "customerType": {
+        "id": 3,
+        "name": "Member"
+      },
+      "name": "Đặng Thị Nhi",
+      "gender": "false",
+      "dateOfBirth": "1994-10-20",
+      "idCard": "245236243",
+      "phoneNumber": "0393090815",
+      "email": "l.v.ngoc93@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    },
+    {
+      "name": "Lại Văn Ngọc",
+      "gender": "true",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "dateOfBirth": "2023-01-18",
+      "idCard": "965656433",
+      "phoneNumber": "+84393090815",
+      "email": "daksong12@gmail.com",
+      "address": "tổ 3 tt đức an đaksong đaknoong",
+      "id": 9
+    },
+    {
+      "name": "Lại Văn Ngọc",
+      "gender": "true",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      },
+      "dateOfBirth": "2023-01-12",
+      "idCard": "667800000",
+      "phoneNumber": "+84393090815",
+      "email": "daksong12@gmail.com",
+      "address": "tổ 3 tt đức an đaksong đaknoong",
+      "id": 10
+    },
+    {
+      "name": "Lại Văn Ngọc",
+      "gender": "true",
+      "customerType": {
+        "id": 3,
+        "name": "Member"
+      },
+      "dateOfBirth": "2023-01-18",
+      "idCard": "667800000",
+      "phoneNumber": "+84393090815",
+      "email": "daksong12@gmail.com",
+      "address": "tổ 3 tt đức an đaksong đaknoong",
+      "id": 11
+    },
+    {
+      "name": "Văn Ngọc",
+      "gender": "true",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      },
+      "dateOfBirth": "1990-10-18",
+      "idCard": "965656433",
+      "phoneNumber": "0393090815",
+      "email": "tranc@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng",
+      "id": 12
+    },
+    {
+      "name": "Văn Ngọc",
+      "gender": "true",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      },
+      "dateOfBirth": "1900-01-16",
+      "idCard": "965656433",
+      "phoneNumber": "0393090815",
+      "email": "tranc@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng",
+      "id": 13
+    },
+    {
+      "name": "New Persom",
+      "gender": "true",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "dateOfBirth": "1900-01-31",
+      "idCard": "965656433",
+      "phoneNumber": "0393090815",
+      "email": "tranc@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng",
+      "id": 14
+    },
+    {
+      "name": "New Persom Ngoc",
+      "gender": "false",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "dateOfBirth": "1900-01-25",
+      "idCard": "965656433",
+      "phoneNumber": "0393090815",
+      "email": "tranc@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng",
+      "id": 15
+    },
+    {
+      "id": 16,
+      "name": "New Persom",
+      "gender": "true",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      },
+      "dateOfBirth": "1777-01-17",
+      "idCard": "965656433",
+      "phoneNumber": "0393090815",
+      "email": "tranc@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    },
+    {
+      "id": 17,
+      "name": "New Persom Ngoc",
+      "gender": "true",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "dateOfBirth": "1888-01-09",
+      "idCard": "965656433",
+      "phoneNumber": "0393090815",
+      "email": "tranc@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    },
+    {
+      "id": 18,
+      "name": "New Persom Ngoc Nhi",
+      "gender": "false",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "dateOfBirth": "1111-01-04",
+      "idCard": "965656433",
+      "phoneNumber": "0393090815",
+      "email": "tranc@gmail.com",
+      "address": "130/3 Hồ Xuân Hương - Ngũ Hành Sơn - Đà Nẵng"
+    }
+  ]
+}
